@@ -1,0 +1,149 @@
+ self.id = input("Veuillez saisir l'id : ")
+        self.first_name = input("Veuillez saisir le prénom : ")
+        self.last_name = input("Veuillez saisir le nom : ")
+        self.birthdate = input("Veuillez saisir votre date de naissance")
+        self.gender = input("Veuillez saisir votre sexe : ")
+        self.rank = input("Veuillez saisir votre rang : ")
+        self.data = {
+            "id": self.id,
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "birthdate": self.birthdate,
+            "gender": self.gender,
+            "rank": self.rank
+        }
+
+menu = Menu(title="Menu principal", choices=["1) Creer un joueur",
+                                             "2) Creer un tournois",
+                                             "3) Liste des joueur",
+                                             "4) Lister un tournois",
+                                             "5) Liste des joueur par classement",
+                                             "6) Afficher les rapport",
+                                             "7) Modifier un joueur",
+                                             "8) Reprendre un tournois"]).display()
+while True:
+
+    selection = input("Veuillez faire votre choix ")
+    selection = int(selection)
+    if selection == 1:
+        form_data = Form(title="Crée un joueur", fields=[("first_name", "prénom"),
+                                                         ("last_name", "nom"),
+                                                         ("birthdate", "date de naissance"),
+                                                         ("gender", "genre"),
+                                                         ("rank", "rang")]).displayP()
+        break
+    elif selection == 2:
+        print("cree un tournois")
+        break
+    elif selection == 3:
+        Table(title="Liste des joueur", items=pm.find_all()).display()
+        break
+    elif selection == 4:
+        Table(title="Liste des tournois", items=tm.find_all()).display()
+        break
+    elif selection == 5:
+        print("Liste des joueur par classement")
+        break
+    elif selection == 6:
+        print("Afficher les rapport")
+        break
+    elif selection == 7:
+        print("Modifier un joueur")
+        break
+    elif selection == 8:
+        print("Reprendre un tournois")
+        break
+    else:
+        print("Erreur")
+        
+        
+        
+from os import name
+from typing import List
+from pydantic import BaseModel
+from enum import Enum
+from pydantic.types import PositiveInt
+from datetime import date, datetime
+import re
+#from managers import player_manager as pm
+from manager import Manager
+
+
+class Gender(Enum):
+    Male = "H"
+    Female = "F"
+
+
+class Name(str):
+    def __new__(cls, v):
+        if not re.match(r"^[A-Za-z \-éèëê']{2,20}$", v):
+            raise ValueError('Nom incorrect')
+        return str.__new__(cls, v.title())
+
+
+class Player(BaseModel):
+    id: PositiveInt
+    first_name: Name
+    last_name: Name
+    birthdate: date
+    gender: Gender
+    rank: PositiveInt
+    
+    def __str__(self) -> str:
+        return f'{self.first_name} {self.last_name} {self.rank}'
+
+
+class TimeControl(Enum):
+    Bullet = "Bullet"
+    Blitz = "Blitz"
+    CoupRapide = "CoupRapide"
+
+
+class Result(Enum):
+    PlayerOneWins = 1.0
+    PlayerTwoWins = 0.0
+    Draw = 0.5
+
+
+class Match(BaseModel):
+    player_one_id: PositiveInt
+    player_two_id: PositiveInt
+    result: Result = None
+
+
+class Turn(BaseModel):
+    name: Name
+    start_date: datetime
+    end_date: datetime
+    matchs: List[Match] = []
+
+
+class Tournament(BaseModel):
+    id: PositiveInt
+    name: Name
+    lieu: Name
+    start_date: datetime
+    end_date: datetime
+    number_of_turns: int = 4
+    turns: List[Turn] = []
+    players: List[PositiveInt]
+    description: str
+    time_control: TimeControl
+    
+    def generate_first_turn(self):
+        players = [Manager().find_by_id(id) for id in self.players]
+        players = sorted(self.players, key=lambda x: x.rank)
+        groupe1, groupe2 = players[:len(players)/2], players[len(players)/2:] #selection de liste
+        print(groupe1, groupe2)
+    
+    def __str__(self) -> str:
+        return f'{self.name} {self.lieu} {self.start_date} {self.end_date} {self.description}'
+    
+    
+Tournament(id=1, name="Zara", lieu="aicha", start_date="2021-09-04T10:30:00",
+           end_date="2021-09-04T10:30:00", number_of_turns="4",
+           turns=[], players=[1, 2, 3, 4, 5, 6], description="Cool", time_control="Bullet").generate_first_turn()
+
+TinyDB("db.json", sort_keys=True, indent=4)
+        with open('db.json') as json_data:
+            self.collection = json.load(json_data)

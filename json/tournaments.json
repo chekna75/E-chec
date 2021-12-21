@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "echec1",
+        "lieu": "Paris",
+        "start_date": "2021-09-04T10:30:00",
+        "end_date": "2021-09-05T16:30:00",
+        "number_of_turns": 4,
+        "turns": [
+                    {
+                        "name":"turn 1",
+                        "start_date":"2021-09-04T11:30:00",
+                        "end_date":"2021-09-05T11:31:00",
+                        "matchs":[
+                                    {
+                                        "player_one_id":1,
+                                        "player_two_id":2,
+                                        "result":1.0
+                                    }
+                        ]
+                    }
+
+                ],
+        "players":[
+                    
+                        1,2
+                    
+                ],
+        "description": "Pardait",
+        "time_control": "Bullet"
+    }
+]

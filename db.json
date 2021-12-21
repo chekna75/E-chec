@@ -1,0 +1,255 @@
+{
+    "players": {
+        "1": {
+            "birthdate": "1990-11-30",
+            "first_name": "Magnus",
+            "gender": "M",
+            "id": 1,
+            "last_name": "Carlsen",
+            "rank": 10
+        },
+        "2": {
+            "birthdate": "1992-07-30",
+            "first_name": "Fabiano",
+            "gender": "M",
+            "id": 2,
+            "last_name": "Caruana",
+            "rank": 11
+        },
+        "3": {
+            "birthdate": "1992-10-24",
+            "first_name": "Ding",
+            "gender": "M",
+            "id": 3,
+            "last_name": "Liren",
+            "rank": 2799
+        },
+        "4": {
+            "birthdate": "1990-07-14",
+            "first_name": "Ian",
+            "gender": "M",
+            "id": 4,
+            "last_name": "Nepomniachtchi",
+            "rank": 2792
+        },
+        "5": {
+            "birthdate": "1982-10-06",
+            "first_name": "Levon",
+            "gender": "M",
+            "id": 5,
+            "last_name": "Aronian",
+            "rank": 2782
+        },
+        "6": {
+            "birthdate": "1985-04-12",
+            "first_name": "Shakhriyar",
+            "gender": "M",
+            "id": 6,
+            "last_name": "Mamedyarov",
+            "rank": 2762
+        },
+        "7": {
+            "birthdate": "1983-10-31",
+            "first_name": "Alexander",
+            "gender": "M",
+            "id": 7,
+            "last_name": "Grischuk",
+            "rank": 2775
+        },
+        "8": {
+            "birthdate": "1994-06-28",
+            "first_name": "Anish",
+            "gender": "M",
+            "id": 8,
+            "last_name": "Giri",
+            "rank": 2777
+        },
+        "9": {
+            "birthdate": "1999-04-27",
+            "first_name": "Chekna",
+            "gender": "M",
+            "id": 9,
+            "last_name": "Diabu",
+            "rank": 1
+        }
+    },
+    "tournaments": {
+        "1": {
+            "description": "cool",
+            "end_date": "2021-05-01T13:33:33",
+            "id": 1,
+            "lieu": "Paris",
+            "name": "Echec",
+            "number_of_turns": 4,
+            "players": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "start_date": "2021-04-27T12:22:22",
+            "time_control": "Bullet",
+            "turns": [
+                {
+                    "end_date": "2021-12-17T09:06:06.657578",
+                    "matchs": [
+                        {
+                            "player_one_id": 1,
+                            "player_two_id": 4,
+                            "result": 1.0
+                        },
+                        {
+                            "player_one_id": 2,
+                            "player_two_id": 3,
+                            "result": 0.0
+                        }
+                    ],
+                    "name": "Round1",
+                    "start_date": "2021-12-17T08:59:29.157463"
+                }
+            ]
+        },
+        "2": {
+            "description": "p",
+            "end_date": "2020-01-01T11:10:00",
+            "id": 2,
+            "lieu": "paris",
+            "name": "test",
+            "number_of_turns": 4,
+            "players": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ],
+            "start_date": "2020-01-01T11:10:00",
+            "time_control": "Blitz",
+            "turns": []
+        },
+        "3": {
+            "description": "test",
+            "end_date": "2021-01-03T08:00:00",
+            "id": 3,
+            "lieu": "paris",
+            "name": "test",
+            "number_of_turns": 4,
+            "players": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "start_date": "2021-01-01T08:01:01",
+            "time_control": "Blitz",
+            "turns": [
+                {
+                    "end_date": "2021-12-17T08:36:19.367617",
+                    "matchs": [
+                        {
+                            "player_one_id": 1,
+                            "player_two_id": 4,
+                            "result": 1.0
+                        },
+                        {
+                            "player_one_id": 2,
+                            "player_two_id": 3,
+                            "result": 1.0
+                        }
+                    ],
+                    "name": "Round1",
+                    "start_date": "2021-12-17T08:36:08.217855"
+                },
+                {
+                    "end_date": "2021-12-17T09:01:27.738170",
+                    "matchs": [
+                        {
+                            "player_one_id": 1,
+                            "player_two_id": 4,
+                            "result": 1.0
+                        },
+                        {
+                            "player_one_id": 2,
+                            "player_two_id": 3,
+                            "result": 0.0
+                        }
+                    ],
+                    "name": "Round1",
+                    "start_date": "2021-12-17T08:59:29.157463"
+                }
+            ]
+        },
+        "4": {
+            "description": "a",
+            "end_date": "2021-01-01T08:30:00",
+            "id": 4,
+            "lieu": "A",
+            "name": "D",
+            "number_of_turns": 4,
+            "players": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "start_date": "2021-01-01T08:10:00",
+            "time_control": "Blitz",
+            "turns": [
+                {
+                    "end_date": "2021-12-17T08:58:48.942231",
+                    "matchs": [
+                        {
+                            "player_one_id": 1,
+                            "player_two_id": 4,
+                            "result": 1.0
+                        },
+                        {
+                            "player_one_id": 2,
+                            "player_two_id": 3,
+                            "result": 0.0
+                        }
+                    ],
+                    "name": "Round1",
+                    "start_date": "2021-12-17T08:46:55.059585"
+                },
+                {
+                    "end_date": "2021-12-17T08:58:52.732205",
+                    "matchs": [
+                        {
+                            "player_one_id": 1,
+                            "player_two_id": 4,
+                            "result": 0.5
+                        },
+                        {
+                            "player_one_id": 2,
+                            "player_two_id": 3,
+                            "result": 1.0
+                        }
+                    ],
+                    "name": "Round1",
+                    "start_date": "2021-12-17T08:58:29.845682"
+                },
+                {
+                    "end_date": "2021-12-17T09:02:51.776593",
+                    "matchs": [
+                        {
+                            "player_one_id": 1,
+                            "player_two_id": 4,
+                            "result": 1.0
+                        },
+                        {
+                            "player_one_id": 2,
+                            "player_two_id": 3,
+                            "result": 0.0
+                        }
+                    ],
+                    "name": "Round1",
+                    "start_date": "2021-12-17T08:59:29.157463"
+                }
+            ]
+        }
+    }
+}
