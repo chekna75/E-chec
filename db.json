@@ -128,7 +128,35 @@
             ],
             "start_date": "2020-01-01T11:10:00",
             "time_control": "Blitz",
-            "turns": []
+            "turns": [
+                {
+                    "end_date": null,
+                    "matchs": [
+                        {
+                            "player_one_id": 1,
+                            "player_two_id": 8,
+                            "result": null
+                        },
+                        {
+                            "player_one_id": 2,
+                            "player_two_id": 5,
+                            "result": null
+                        },
+                        {
+                            "player_one_id": 6,
+                            "player_two_id": 4,
+                            "result": null
+                        },
+                        {
+                            "player_one_id": 7,
+                            "player_two_id": 3,
+                            "result": null
+                        }
+                    ],
+                    "name": "Round1",
+                    "start_date": "2021-12-22T14:13:42.637766"
+                }
+            ]
         },
         "3": {
             "description": "test",

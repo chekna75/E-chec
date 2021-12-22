@@ -51,8 +51,8 @@ class Tournament(BaseModel):
         #     print(match)
 
     def play(self, view, manager):
-        for turn in range(self.turn_nb):
-            if turn.end_date is None:
+        for turn in range(self.number_of_turns):
+            if turn is None:
                 turn.play(view=view)
                 manager.save_item(self.id)
 
@@ -62,7 +62,7 @@ class Tournament(BaseModel):
             players = sorted(turn.matchs, key=lambda x: x.result)
             groupe1, groupe2 = players[:len(players)//2], players[len(players)//2:]
             print(groupe1)
-            
+
 
     def generate_turn(self, turn_nb):
         if turn_nb == 1:

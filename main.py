@@ -60,7 +60,7 @@ def reprendre_tournament_controller():
     tournament.play(ChoiceWinner, tm)
     print(form_data)
     tm.save_item(int(form_data["id"]))
-    main_controller()
+    # main_controller()
 
 
 def list_player_alphabetique_controller():
