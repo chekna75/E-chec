@@ -15,14 +15,14 @@ class Turn(BaseModel):
 
     def play(self, view):
         for match in self.matchs:
-            if match.result is None:
+            if match.score_one is None:
                 player_one = player_manager.find_by_id(match.player_one_id)
                 player_two = player_manager.find_by_id(match.player_two_id)
                 choice = view(joueur1=player_one, joueur2=player_two).display()
                 if choice == 1:
-                    match.result = Result.PlayerOneWins
+                    match.score_one = Result.PlayerOneWins
                 elif choice == 2:
-                    match.result = Result.PlayerTwoWins
+                    match.score_one = Result.PlayerTwoWins
                 else:
-                    match.result = Result.Draw
+                    match.score_one = Result.Draw
         self.end_date = datetime.today()

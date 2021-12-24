@@ -1,3 +1,5 @@
+from create_new_tournament_form import CreateNewTournamentForm
+from models.timecontrol import TimeControl
 from player_manager import player_manager as pm
 from tournament_manager import tournament_manager as tm
 from table import Table
@@ -18,19 +20,7 @@ def create_player_controller():
 
 
 def create_tournament_controller():
-    form_dataT = Form(title="Crée un Tournois", fields=[("name", "Nom du tournois"),
-                                                        ("lieu", "Lieu"),
-                                                        ("start_date", "Début du tournois AAAA-MM-YYYY HH:mm:ss"),
-                                                        ("end_date", "Fin du tournois AAAA-MM-YYYY HH:mm:ss"),
-                                                        ("number_of_turns", "Nombre de tour"),
-                                                        ("number_of_players", "Nombre de joueur"),
-                                                        ("description", "description"),
-                                                        ("time_control", "Controle du temps")]).display()
-    form_dataT["players"] = []
-    for _ in range(int(form_dataT["number_of_players"])):
-        data = Form(title="Nombre de joueur", fields=[("id", "id du joueur")]).display()
-        form_dataT["players"].append(int(data["id"]))
-    # print(form_dataT)
+    form_dataT = CreateNewTournamentForm().display()
     tm.create(**form_dataT, save=True)
     main_controller()
 
@@ -57,6 +47,8 @@ def reprendre_tournament_controller():
     form_data = Form(title="Reprendre un tournoi", fields=
                      [("id","id du tournoi")]).display()
     tournament = tm.find_by_id(int(form_data["id"]))
+    go = tournament.generate_turn()
+    go.display()
     tournament.play(ChoiceWinner, tm)
     print(form_data)
     tm.save_item(int(form_data["id"]))

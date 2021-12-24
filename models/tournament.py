@@ -16,7 +16,7 @@ class Tournament(BaseModel):
     name: Name
     lieu: Name
     start_date: datetime
-    end_date: datetime
+    end_date: datetime = None
     number_of_turns: int = 4
     turns: List[Turn] = []
     players: List[PositiveInt]
@@ -51,24 +51,48 @@ class Tournament(BaseModel):
         #     print(match)
 
     def play(self, view, manager):
-        for turn in range(self.number_of_turns):
-            if turn is None:
+        for turn in self.turns:
+            print(turn)
+            if turn is not None:
                 turn.play(view=view)
                 manager.save_item(self.id)
 
     def generate_next_turn(self):
-            print(turn)
-            players = [player_manager.find_by_id(id) for id in self.players]
-            players = sorted(turn.matchs, key=lambda x: x.result)
-            groupe1, groupe2 = players[:len(players)//2], players[len(players)//2:]
-            print(groupe1)
-
-
-    def generate_turn(self, turn_nb):
-        if turn_nb == 1:
-            self.generate_first_turn()
-        elif turn_nb > 1:
-            self.generate_next_turn()
+        players = [player_manager.find_by_id(id) for id in self.players]
+        players = sorted(players, key=lambda x: x.rank)
+        groupe1, groupe2 = players[:len(players)//2], players[len(players)//2:] # selection de liste
+        # print(groupe1, groupe2)
+        turn = Turn(name="Round1")
+        for i in range(len(groupe1)):
+            match = Match(player_one_id=groupe1[i].id, player_two_id=groupe2[i].id)
+            turn.matchs.append(match)
+            print(match)
+        self.turns.append(turn)
+        print(turn.matchs)
+        input("")
+        
+    def generate_turn(self):
+        turn_nb = self.turns
+        print(turn_nb)
+        for turn in self.turns:
+            if turn == 1:
+                self.generate_first_turn()
+            elif turn != 1:
+                self.generate_next_turn()
+            elif turn > 4:
+                print("tournois fini")
+    
+    def get_player_score(self, id: int):
+        score = 0.0
+        for turn in self.turns:
+            for match in turn.matches:
+                if match.result is not None:
+                    if id == match.player_one_id:
+                        score += match.score
+                    elif id == match.player_two_id:
+                        score += match.score
+            
+        return score
 
     def __str__(self) -> str:
         return f'{self.name} {self.lieu} {self.start_date} {self.end_date} {self.description}'

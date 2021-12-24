@@ -96,12 +96,12 @@
                         {
                             "player_one_id": 1,
                             "player_two_id": 4,
-                            "result": 1.0
+                            "score_one": 1.0
                         },
                         {
                             "player_one_id": 2,
                             "player_two_id": 3,
-                            "result": 0.0
+                            "score_one": 0.0
                         }
                     ],
                     "name": "Round1",
@@ -135,12 +135,12 @@
                         {
                             "player_one_id": 1,
                             "player_two_id": 8,
-                            "result": null
+                            "score_one": null
                         },
                         {
                             "player_one_id": 2,
                             "player_two_id": 5,
-                            "result": null
+                            "score_one": null
                         },
                         {
                             "player_one_id": 6,
@@ -150,7 +150,7 @@
                         {
                             "player_one_id": 7,
                             "player_two_id": 3,
-                            "result": null
+                            "score_one": null
                         }
                     ],
                     "name": "Round1",
