@@ -91,7 +91,41 @@
             "time_control": "Bullet",
             "turns": [
                 {
-                    "end_date": "2021-12-17T09:06:06.657578",
+                    "end_date": null,
+                    "matchs": [
+                        {
+                            "player_one_id": 1,
+                            "player_two_id": 4,
+                            "score_one": null
+                        },
+                        {
+                            "player_one_id": 2,
+                            "player_two_id": 3,
+                            "score_one": null
+                        }
+                    ],
+                    "name": "Round",
+                    "start_date": "2021-12-30T18:38:48.561011"
+                },
+                {
+                    "end_date": null,
+                    "matchs": [
+                        {
+                            "player_one_id": 1,
+                            "player_two_id": 4,
+                            "score_one": null
+                        },
+                        {
+                            "player_one_id": 2,
+                            "player_two_id": 3,
+                            "score_one": null
+                        }
+                    ],
+                    "name": "Round",
+                    "start_date": "2021-12-30T18:38:48.561011"
+                },
+                {
+                    "end_date": "2021-12-30T18:39:30.448078",
                     "matchs": [
                         {
                             "player_one_id": 1,
@@ -104,178 +138,8 @@
                             "score_one": 0.0
                         }
                     ],
-                    "name": "Round1",
-                    "start_date": "2021-12-17T08:59:29.157463"
-                }
-            ]
-        },
-        "2": {
-            "description": "p",
-            "end_date": "2020-01-01T11:10:00",
-            "id": 2,
-            "lieu": "paris",
-            "name": "test",
-            "number_of_turns": 4,
-            "players": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8
-            ],
-            "start_date": "2020-01-01T11:10:00",
-            "time_control": "Blitz",
-            "turns": [
-                {
-                    "end_date": null,
-                    "matchs": [
-                        {
-                            "player_one_id": 1,
-                            "player_two_id": 8,
-                            "score_one": null
-                        },
-                        {
-                            "player_one_id": 2,
-                            "player_two_id": 5,
-                            "score_one": null
-                        },
-                        {
-                            "player_one_id": 6,
-                            "player_two_id": 4,
-                            "result": null
-                        },
-                        {
-                            "player_one_id": 7,
-                            "player_two_id": 3,
-                            "score_one": null
-                        }
-                    ],
-                    "name": "Round1",
-                    "start_date": "2021-12-22T14:13:42.637766"
-                }
-            ]
-        },
-        "3": {
-            "description": "test",
-            "end_date": "2021-01-03T08:00:00",
-            "id": 3,
-            "lieu": "paris",
-            "name": "test",
-            "number_of_turns": 4,
-            "players": [
-                1,
-                2,
-                3,
-                4
-            ],
-            "start_date": "2021-01-01T08:01:01",
-            "time_control": "Blitz",
-            "turns": [
-                {
-                    "end_date": "2021-12-17T08:36:19.367617",
-                    "matchs": [
-                        {
-                            "player_one_id": 1,
-                            "player_two_id": 4,
-                            "result": 1.0
-                        },
-                        {
-                            "player_one_id": 2,
-                            "player_two_id": 3,
-                            "result": 1.0
-                        }
-                    ],
-                    "name": "Round1",
-                    "start_date": "2021-12-17T08:36:08.217855"
-                },
-                {
-                    "end_date": "2021-12-17T09:01:27.738170",
-                    "matchs": [
-                        {
-                            "player_one_id": 1,
-                            "player_two_id": 4,
-                            "result": 1.0
-                        },
-                        {
-                            "player_one_id": 2,
-                            "player_two_id": 3,
-                            "result": 0.0
-                        }
-                    ],
-                    "name": "Round1",
-                    "start_date": "2021-12-17T08:59:29.157463"
-                }
-            ]
-        },
-        "4": {
-            "description": "a",
-            "end_date": "2021-01-01T08:30:00",
-            "id": 4,
-            "lieu": "A",
-            "name": "D",
-            "number_of_turns": 4,
-            "players": [
-                1,
-                2,
-                3,
-                4
-            ],
-            "start_date": "2021-01-01T08:10:00",
-            "time_control": "Blitz",
-            "turns": [
-                {
-                    "end_date": "2021-12-17T08:58:48.942231",
-                    "matchs": [
-                        {
-                            "player_one_id": 1,
-                            "player_two_id": 4,
-                            "result": 1.0
-                        },
-                        {
-                            "player_one_id": 2,
-                            "player_two_id": 3,
-                            "result": 0.0
-                        }
-                    ],
-                    "name": "Round1",
-                    "start_date": "2021-12-17T08:46:55.059585"
-                },
-                {
-                    "end_date": "2021-12-17T08:58:52.732205",
-                    "matchs": [
-                        {
-                            "player_one_id": 1,
-                            "player_two_id": 4,
-                            "result": 0.5
-                        },
-                        {
-                            "player_one_id": 2,
-                            "player_two_id": 3,
-                            "result": 1.0
-                        }
-                    ],
-                    "name": "Round1",
-                    "start_date": "2021-12-17T08:58:29.845682"
-                },
-                {
-                    "end_date": "2021-12-17T09:02:51.776593",
-                    "matchs": [
-                        {
-                            "player_one_id": 1,
-                            "player_two_id": 4,
-                            "result": 1.0
-                        },
-                        {
-                            "player_one_id": 2,
-                            "player_two_id": 3,
-                            "result": 0.0
-                        }
-                    ],
-                    "name": "Round1",
-                    "start_date": "2021-12-17T08:59:29.157463"
+                    "name": "Round",
+                    "start_date": "2021-12-30T18:39:20.479927"
                 }
             ]
         }

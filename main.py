@@ -1,3 +1,4 @@
+from typing import Any
 from create_new_tournament_form import CreateNewTournamentForm
 from models.timecontrol import TimeControl
 from player_manager import player_manager as pm
@@ -45,11 +46,10 @@ def list_players_rank_controller():
 
 def reprendre_tournament_controller():
     form_data = Form(title="Reprendre un tournoi", fields=
-                     [("id","id du tournoi")]).display()
+                     [("id","id du tournoi", str)]).display()
     tournament = tm.find_by_id(int(form_data["id"]))
-    go = tournament.generate_turn()
-    go.display()
-    tournament.play(ChoiceWinner, tm)
+    tournament.generate_turn()
+    # tournament.play(ChoiceWinner, tm)
     print(form_data)
     tm.save_item(int(form_data["id"]))
     # main_controller()
