@@ -75,57 +75,22 @@
     },
     "tournaments": {
         "1": {
-            "description": "cool",
-            "end_date": "2021-05-01T13:33:33",
+            "description": "a",
+            "end_date": null,
             "id": 1,
-            "lieu": "Paris",
-            "name": "Echec",
-            "number_of_turns": 4,
+            "lieu": "p",
+            "name": "Test",
             "players": [
                 1,
                 2,
                 3,
                 4
             ],
-            "start_date": "2021-04-27T12:22:22",
-            "time_control": "Bullet",
+            "start_date": "2000-01-01T11:11:00",
+            "time_control": "Blitz",
             "turns": [
                 {
-                    "end_date": null,
-                    "matchs": [
-                        {
-                            "player_one_id": 1,
-                            "player_two_id": 4,
-                            "score_one": null
-                        },
-                        {
-                            "player_one_id": 2,
-                            "player_two_id": 3,
-                            "score_one": null
-                        }
-                    ],
-                    "name": "Round",
-                    "start_date": "2021-12-30T18:38:48.561011"
-                },
-                {
-                    "end_date": null,
-                    "matchs": [
-                        {
-                            "player_one_id": 1,
-                            "player_two_id": 4,
-                            "score_one": null
-                        },
-                        {
-                            "player_one_id": 2,
-                            "player_two_id": 3,
-                            "score_one": null
-                        }
-                    ],
-                    "name": "Round",
-                    "start_date": "2021-12-30T18:38:48.561011"
-                },
-                {
-                    "end_date": "2021-12-30T18:39:30.448078",
+                    "end_date": "2022-01-04T14:57:35.501111",
                     "matchs": [
                         {
                             "player_one_id": 1,
@@ -138,8 +103,20 @@
                             "score_one": 0.0
                         }
                     ],
-                    "name": "Round",
-                    "start_date": "2021-12-30T18:39:20.479927"
+                    "name": "tour1",
+                    "start_date": "2022-01-04T14:56:45.082442"
+                },
+                {
+                    "end_date": null,
+                    "matchs": [],
+                    "name": "tour2",
+                    "start_date": "2022-01-04T14:56:45.082442"
+                },
+                {
+                    "end_date": null,
+                    "matchs": [],
+                    "name": "tour3",
+                    "start_date": "2022-01-04T14:56:45.082442"
                 }
             ]
         }

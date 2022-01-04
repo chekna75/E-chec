@@ -1,13 +1,10 @@
-from typing import Any
+
 from create_new_tournament_form import CreateNewTournamentForm
-from models.timecontrol import TimeControl
 from player_manager import player_manager as pm
 from tournament_manager import tournament_manager as tm
 from table import Table
 from view import ChoiceWinner, Menu
 from form import Form
-from tinydb import TinyDB
-from tinydb.table import Document
 
 
 def create_player_controller():
@@ -48,8 +45,7 @@ def reprendre_tournament_controller():
     form_data = Form(title="Reprendre un tournoi", fields=
                      [("id","id du tournoi", str)]).display()
     tournament = tm.find_by_id(int(form_data["id"]))
-    tournament.generate_turn()
-    # tournament.play(ChoiceWinner, tm)
+    tournament.play(ChoiceWinner, tm)
     print(form_data)
     tm.save_item(int(form_data["id"]))
     # main_controller()
