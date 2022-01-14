@@ -80,6 +80,11 @@ class Tournament(BaseModel):
                 if match.played:
                     result.append(match)
         return result
+    
+    def __eq__(self, other):
+        
+        if isinstance(self.all_matchs, other):
+            return self.all_matchs == other.all_matchs
 
     def __str__(self) -> str:
         return f'{self.name} {self.lieu} {self.start_date} {self.end_date} {self.description}'
