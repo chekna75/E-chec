@@ -39,14 +39,17 @@ class Tournament(BaseModel):
                     turn.play(view=view)
                     manager.save_item(self.id)
                 else:
-                    self.generate_next_turn()
+                    self.generate_next_turn(turn_nb=turn)
 
     def generate_next_turn(self, turn_nb):
         players = [player_manager.find_by_id(id) for id in self.players]
         players = sorted(players, key=lambda x: (-self.get_player_score(x.id), -x.rank))
         while players:
             p1 = players.pop(0)
-            
+            p2 = players.pop(1)
+            m = [Match(player_one_id=p1.id, player_two_id=p2.id)]
+            print(m)
+            #self.turns[turn_nb].matchs = [Match(player_one_id=p1.id, player_two_id=p2.id)]
             self.turns[turn_nb].append(m)
 
 
@@ -80,11 +83,11 @@ class Tournament(BaseModel):
                 if match.played:
                     result.append(match)
         return result
-    
+
     def __eq__(self, other):
-        
-        if isinstance(self.all_matchs, other):
-            return self.all_matchs == other.all_matchs
+        if isinstance(other, self.generate_next_turn):
+            return self.matchs == other.matchs
+        return False
 
     def __str__(self) -> str:
         return f'{self.name} {self.lieu} {self.start_date} {self.end_date} {self.description}'
