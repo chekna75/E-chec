@@ -68,14 +68,14 @@ def update_player_rank_controller():
 
 def main_controller():
 
-    selection = Menu(title="Menu principal", choices=["Creer un joueur",
-                                                      " Creer un tournois",
-                                                      " Liste des joueur",
-                                                      " Lister un tournois",
-                                                      " Liste des joueur par classement",
-                                                      " Afficher les rapport",
-                                                      " Modifier un joueur",
-                                                      " Reprendre un tournois"]).display()
+    selection = Menu(title="Menu principal", choices=[("Creer un joueur", 1),
+                                                      (" Creer un tournois", 2),
+                                                      (" Liste des joueur", 3),
+                                                      (" Lister un tournois", 4),
+                                                      (" Liste des joueur par classement", 5),
+                                                      (" Afficher les rapport", 6),
+                                                      (" Modifier un joueur", 7),
+                                                      (" Reprendre un tournois", 8)]).display()
 
     if selection == 1:
         create_player_controller()

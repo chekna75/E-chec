@@ -75,10 +75,10 @@
     },
     "tournaments": {
         "1": {
-            "description": "a",
+            "description": "test",
             "end_date": null,
             "id": 1,
-            "lieu": "p",
+            "lieu": "Paris",
             "name": "Test",
             "players": [
                 1,
@@ -86,89 +86,43 @@
                 3,
                 4
             ],
-            "start_date": "2000-01-01T11:11:00",
+            "start_date": "2022-01-26T15:30:00",
             "time_control": "Blitz",
             "turns": [
                 {
-                    "end_date": "2022-01-04T14:57:35.501111",
+                    "end_date": "2022-01-26T15:25:51.404444",
                     "matchs": [
                         {
                             "player_one_id": 1,
                             "player_two_id": 4,
-                            "score_one": 1.0
+                            "score_one": null
                         },
                         {
                             "player_one_id": 2,
                             "player_two_id": 3,
-                            "score_one": 0.0
+                            "score_one": null
                         }
                     ],
                     "name": "tour1",
-                    "start_date": "2022-01-04T14:56:45.082442"
+                    "start_date": "2022-01-26T15:25:01.527643"
                 },
                 {
                     "end_date": null,
                     "matchs": [],
                     "name": "tour2",
-                    "start_date": "2022-01-04T14:56:45.082442"
+                    "start_date": "2022-01-26T15:25:01.527643"
                 },
                 {
                     "end_date": null,
                     "matchs": [],
                     "name": "tour3",
-                    "start_date": "2022-01-04T14:56:45.082442"
-                }
-            ]
-        },
-        "2": {
-            "description": "a",
-            "end_date": null,
-            "id": 2,
-            "lieu": "Z",
-            "name": "a",
-            "players": [
-                1,
-                2,
-                3,
-                4
-            ],
-            "start_date": "2022-01-01T11:11:00",
-            "time_control": "Blitz",
-            "turns": [
-                {
-                    "end_date": "2022-01-07T17:23:18.900992",
-                    "matchs": [
-                        {
-                            "player_one_id": 1,
-                            "player_two_id": 4,
-                            "score_one": 1.0
-                        },
-                        {
-                            "player_one_id": 2,
-                            "player_two_id": 3,
-                            "score_one": 0.0
-                        }
-                    ],
-                    "name": "tour1",
-                    "start_date": "2022-01-07T17:21:47.836261"
-                },
-                {
-                    "end_date": null,
-                    "matchs": [],
-                    "name": "tour2",
-                    "start_date": "2022-01-07T17:21:47.836261"
-                },
-                {
-                    "end_date": null,
-                    "matchs": [],
-                    "name": "tour3",
-                    "start_date": "2022-01-07T17:21:47.836261"
+                    "start_date": "2022-01-26T15:25:01.527643"
                 },
                 {
                     "end_date": null,
                     "matchs": [],
                     "name": "tour4",
-                    "start_date": "2022-01-07T17:21:47.836261"
+                    "start_date": "2022-01-26T15:25:01.527643"
                 }
             ]
         }

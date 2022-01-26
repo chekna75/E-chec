@@ -1,4 +1,5 @@
 import os
+from typing import List
 
 
 class View:
@@ -24,7 +25,7 @@ class View:
 class Menu(View):
     '''Reprendre les capacité de view et pouvoir faire un choix 
     parmis les options'''
-    def __init__(self, title, choices):
+    def __init__(self, title: str, choices: List[str]):
         self.choices = choices
         content = "\n".join([f'{nb}) {el}' for nb, el in enumerate(choices,
                                                                    start=1)])
@@ -43,5 +44,5 @@ class Menu(View):
 
 class ChoiceWinner(Menu):
     def __init__(self, joueur1, joueur2):
-        choices = [str(joueur1) + "ème rang a gagné", str(joueur2) + "ème rang a gagné", "match nul"]
+        choices = [(str(joueur1) + " a gagné", 1.0), (str(joueur2) + " a gagné", 0.0), ("match nul", 0,5)]
         super().__init__(title="Choissisez le gagnant", choices=choices)
