@@ -90,37 +90,70 @@
             "time_control": "Blitz",
             "turns": [
                 {
-                    "end_date": "2022-01-26T15:25:51.404444",
+                    "end_date": "2022-01-26T16:10:40.631174",
                     "matchs": [
                         {
                             "player_one_id": 1,
                             "player_two_id": 4,
-                            "score_one": null
+                            "score_one": 1.0
                         },
                         {
                             "player_one_id": 2,
                             "player_two_id": 3,
-                            "score_one": null
+                            "score_one": 0.0
                         }
                     ],
                     "name": "tour1",
                     "start_date": "2022-01-26T15:25:01.527643"
                 },
                 {
-                    "end_date": null,
-                    "matchs": [],
+                    "end_date": "2022-01-28T16:05:59.780436",
+                    "matchs": [
+                        {
+                            "player_one_id": 3,
+                            "player_two_id": 4,
+                            "score_one": 0.0
+                        },
+                        {
+                            "player_one_id": 2,
+                            "player_two_id": 1,
+                            "score_one": 1.0
+                        }
+                    ],
                     "name": "tour2",
                     "start_date": "2022-01-26T15:25:01.527643"
                 },
                 {
-                    "end_date": null,
-                    "matchs": [],
+                    "end_date": "2022-01-28T16:06:03.193729",
+                    "matchs": [
+                        {
+                            "player_one_id": 3,
+                            "player_two_id": 4,
+                            "score_one": 0.0
+                        },
+                        {
+                            "player_one_id": 2,
+                            "player_two_id": 1,
+                            "score_one": 1.0
+                        }
+                    ],
                     "name": "tour3",
                     "start_date": "2022-01-26T15:25:01.527643"
                 },
                 {
-                    "end_date": null,
-                    "matchs": [],
+                    "end_date": "2022-01-28T16:06:05.634646",
+                    "matchs": [
+                        {
+                            "player_one_id": 3,
+                            "player_two_id": 4,
+                            "score_one": 0.0
+                        },
+                        {
+                            "player_one_id": 2,
+                            "player_two_id": 1,
+                            "score_one": 1.0
+                        }
+                    ],
                     "name": "tour4",
                     "start_date": "2022-01-26T15:25:01.527643"
                 }

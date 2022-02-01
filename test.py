@@ -1,3 +1,11 @@
 from view import Menu
-from tournament_manager import tournament_manager
-print(tournament_manager.find_all()[0].turns[0].matchs)
+
+selection = Menu(title="Menu principal", choices=[("Creer un joueur", 1),
+                                                      ("Creer un tournois", 2),
+                                                      ("Liste des joueur", 3),
+                                                      ("Lister un tournois", 4),
+                                                      ("Liste des joueur par classement", 5),
+                                                      ("Afficher les rapport", 6),
+                                                      ("Modifier un joueur", 7),
+                                                      ("Reprendre un tournois", 8)]).display()
+print(selection)

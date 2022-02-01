@@ -9,7 +9,7 @@ class Match(BaseModel):
     score_one: Result = None
     
     def play(self, view_class, player_manager):
-        if self.played:
+        if not self.played:
             player_one = player_manager.find_by_id(self.player_one_id)
             player_two = player_manager.find_by_id(self.player_two_id)
             choice = view_class(joueur1=player_one, joueur2=player_two).display()

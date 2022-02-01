@@ -14,4 +14,5 @@ class Turn(BaseModel):
     def play(self, view_class, player_manager):
         for match in self.matchs:
             match.play(view_class, player_manager)
-        self.end_date = datetime.today()
+            if match.score_one is not None:
+                self.end_date = datetime.today()

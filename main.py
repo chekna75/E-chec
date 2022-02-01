@@ -3,7 +3,7 @@ from create_new_tournament_form import CreateNewTournamentForm
 from player_manager import player_manager as pm
 from tournament_manager import tournament_manager as tm
 from table import Table
-from view import ChoiceWinner, Menu
+from view import ChoiceWinner, Menu, MainMenu
 from form import Form
 
 
@@ -45,7 +45,7 @@ def reprendre_tournament_controller():
     form_data = Form(title="Reprendre un tournoi", fields=
                      [("id","id du tournoi", str)]).display()
     tournament = tm.find_by_id(int(form_data["id"]))
-    tournament.play(ChoiceWinner, tm)
+    tournament.play(ChoiceWinner, pm, tm)
     print(form_data)
     tm.save_item(int(form_data["id"]))
     # main_controller()
@@ -67,15 +67,8 @@ def update_player_rank_controller():
 
 
 def main_controller():
-
-    selection = Menu(title="Menu principal", choices=[("Creer un joueur", 1),
-                                                      (" Creer un tournois", 2),
-                                                      (" Liste des joueur", 3),
-                                                      (" Lister un tournois", 4),
-                                                      (" Liste des joueur par classement", 5),
-                                                      (" Afficher les rapport", 6),
-                                                      (" Modifier un joueur", 7),
-                                                      (" Reprendre un tournois", 8)]).display()
+    selection = MainMenu().display()
+    print(selection)
 
     if selection == 1:
         create_player_controller()
