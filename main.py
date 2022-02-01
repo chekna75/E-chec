@@ -77,9 +77,9 @@ def main_controller():
         create_tournament_controller()
 
     elif selection == 3:
-        selection = Menu(title="Liste des joueurs", choices=["Liste des joueurs",
-                                                             " Liste des joueurs par classement",
-                                                             " Liste des joueurs par ordre alphabetique"]).display()
+        selection = Menu(title="Liste des joueurs", choices=[("Liste des joueurs", 1),
+                                                             (" Liste des joueurs par classement", 2),
+                                                             (" Liste des joueurs par ordre alphabetique", 3)]).display()
         if selection == 1:
             list_players_controller()
 
