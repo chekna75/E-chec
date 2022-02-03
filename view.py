@@ -18,10 +18,6 @@ class View:
             input()
 
 
-# #view = View(title="A", content="B")
-# view.display()
-
-
 class Menu(View):
     '''Reprendre les capacité de view et pouvoir faire un choix parmis les options'''
     def __init__(self, title: str, choices: List[str]):
