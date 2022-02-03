@@ -10,6 +10,7 @@ from player_manager import player_manager
 
 
 class Tournament(BaseModel):
+    '''Class model pour tournois'''
     id: PositiveInt
     name: Name
     lieu: Name
@@ -26,12 +27,14 @@ class Tournament(BaseModel):
             self.generate_first_turn()
 
     def generate_first_turn(self):
+        '''Fonction pour la génération du premier tour et la création des premier match'''
         players = [player_manager.find_by_id(id) for id in self.players]
         players = sorted(players, key=lambda x: x.rank)
-        groupe1, groupe2 = players[:len(players)//2], players[len(players)//2:] # selection de liste
+        groupe1, groupe2 = players[:len(players)//2], players[len(players)//2:]
         self.turns[0].matchs = [Match(player_one_id=p1.id, player_two_id=p2.id) for p1, p2 in zip(groupe1, groupe2)]
 
     def play(self, view_class, player_manager, tournament_manager):
+        '''Fonction pour jouer'''
         for turn in self.turns:
             if turn.end_date is None:
                 if turn.matchs:
@@ -43,6 +46,7 @@ class Tournament(BaseModel):
                     tournament_manager.save_item(self.id)
 
     def generate_next_turn(self, turn_nb):
+        '''Fonction pour la génération des prochain tour'''
         players = [player_manager.find_by_id(id) for id in self.players]
         players = sorted(players, key=lambda x: (-self.get_player_score(x.id), -x.rank))
         while players:
@@ -50,9 +54,9 @@ class Tournament(BaseModel):
             m = self.create_match(players, p1, turn_nb)
             self.turns[turn_nb].matchs.append(m)
             print(m)
-            # self.turns[turn_nb].matchs = [Match(player_one_id=p1.id, player_two_id=p2.id)]
 
     def get_player_score(self, id: int):
+        '''Fonvtion pour définir le score du match'''
         score = 0.0
         for turn in self.turns:
             for match in turn.matchs:
@@ -69,6 +73,7 @@ class Tournament(BaseModel):
 
     @property
     def all_matchs(self):
+        '''Fonction pour avoir tout les matchs'''
         result = []
         for turn in self.turns:
             for match in turn.matchs:
@@ -85,6 +90,7 @@ class Tournament(BaseModel):
         return result
 
     def create_match(self, players, p1, turn_nb):
+        '''Fonction pour la création des match'''
         for p2 in players:
             m = Match(player_one_id=p1.id, player_two_id=p2.id)
             if not m in self.turns[turn_nb].matchs:

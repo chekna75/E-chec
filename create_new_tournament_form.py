@@ -3,10 +3,12 @@ from form import Form
 from models.timecontrol import TimeControl
 from datetime import datetime
 
+
 class CreateNewTournamentForm(Form):
+    '''Class pour la création d'un tournois'''
     def __init__(self):
         super().__init__(
-            title="Crée un Tournois", 
+            title="Crée un Tournois",
             fields=[("name", "Nom du tournois", str),
                     ("lieu", "Lieu", str),
                     ("start_year", "Année de début", int),
@@ -20,7 +22,9 @@ class CreateNewTournamentForm(Form):
                     ("time_control", "Controle du temps", TimeControl)])
 
     def post_process(self, data: Dict):
-        data["start_date"] = datetime(year=data["start_year"], month=data["start_month"], day=data["start_day"], hour=data["start_hour"], minute=data["start_minute"])
+        '''Permet de découper l'affichage et la saisie'''
+        data["start_date"] = datetime(year=data["start_year"], month=data["start_month"], day=data["start_day"],
+                                      hour=data["start_hour"], minute=data["start_minute"])
         data["players"] = []
         for _ in range(data["number_of_players"]):
             player_data = Form(title="Nombre de joueur", fields=[("id", "id du joueur", int)]).display()

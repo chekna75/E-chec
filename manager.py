@@ -10,6 +10,7 @@ from tinydb.table import Document
 
 
 class Manager:
+    '''Class Manager'''
     def __init__(self, item_type: Any) -> None:
         self.max_id = 0
         self.collection: Dict[PositiveInt, Any] = {}
@@ -20,16 +21,20 @@ class Manager:
             self.create(**item)
 
     def find_all(self):
+        '''Fonction pour récuperer toute la list'''
         return list(self.collection.values())
 
     def find_by_id(self, id: PositiveInt):
+        '''Fonction pour récuperer l'id'''
         return self.collection[id]
 
     def save_item(self, id):
+        '''Fonction pour la sauvegarde dans la bdd'''
         item = self.find_by_id(id)
         self.table.upsert(Document(json.loads(item.json()), doc_id=id))
 
     def create(self, *args, save: bool = False, **kwargs):
+        '''Fonction pour la creation puis apres la sauvegarde dans la bdd'''
         if "id" not in kwargs:
             kwargs["id"] = self.max_id + 1
         item = self.item_type(*args, **kwargs)

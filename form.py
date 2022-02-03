@@ -3,7 +3,7 @@ from view import View
 
 
 class Form(View):
-
+    '''Class Form pour la cration des formulaires'''
     def __init__(self, title: str, fields: List[Tuple[str, str, Any]]) -> None:
         super().__init__(title=title)
         self.fields = fields
@@ -20,6 +20,6 @@ class Form(View):
                 except ValueError:
                     pass
         return self.post_process(data)
-    
+
     def post_process(self, data: Dict):
         return data

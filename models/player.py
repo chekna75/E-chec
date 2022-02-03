@@ -6,6 +6,7 @@ from .name import Name
 
 
 class Player(BaseModel):
+    '''Class model pour le model d'un joueur'''
     id: PositiveInt
     first_name: Name
     last_name: Name

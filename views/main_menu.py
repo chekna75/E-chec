@@ -2,6 +2,7 @@ from view import Menu
 
 
 class MainMenu(Menu):
+    '''Class vue poir afficher le menu principal'''
     def __init__(self):
         super().__init__(title="Menu Principal", choices=[("Creer un joueur", 1),
                                                           ("Creer un tournois", 2),

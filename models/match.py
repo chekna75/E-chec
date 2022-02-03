@@ -4,11 +4,13 @@ from .result import Result
 
 
 class Match(BaseModel):
+    '''Class model d'un match'''
     player_one_id: PositiveInt
     player_two_id: PositiveInt
     score_one: Result = None
-    
+
     def play(self, view_class, player_manager):
+        '''Fonction qui permttre de jouer un match si il est pas encore jouer'''
         if not self.played:
             player_one = player_manager.find_by_id(self.player_one_id)
             player_two = player_manager.find_by_id(self.player_two_id)
