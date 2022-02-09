@@ -35,40 +35,37 @@ class Tournament(BaseModel):
 
     def play(self, view_class, player_manager, tournament_manager):
         '''Fonction pour jouer'''
-        for turn in self.turns:
+        for turn_nb, turn in enumerate(self.turns):
             if turn.end_date is None:
                 if turn.matchs:
                     turn.play(view_class, player_manager)
                     tournament_manager.save_item(self.id)
                 else:
-                    self.generate_next_turn()
+                    self.generate_next_turn(turn_nb)
                     turn.play(view_class, player_manager)
                     tournament_manager.save_item(self.id)
 
     def generate_next_turn(self, turn_nb):
         '''Fonction pour la génération des prochain tour'''
+        self.turns[turn_nb].start_date = datetime.today()
         players = [player_manager.find_by_id(id) for id in self.players]
         players = sorted(players, key=lambda x: (-self.get_player_score(x.id), -x.rank))
         while players:
             p1 = players.pop(0)
             m = self.create_match(players, p1, turn_nb)
             self.turns[turn_nb].matchs.append(m)
-            print(m)
 
     def get_player_score(self, id: int):
-        '''Fonvtion pour définir le score du match'''
+        '''Fonction pour définir le score du match'''
         score = 0.0
         for turn in self.turns:
             for match in turn.matchs:
-                print(match)
                 if match.played:
                     if id == match.player_one_id:
                         score += match.score_one.value
-                        print(score)
                     elif id == match.player_two_id:
                         score += match.score_two.value
-                        print(score)
-        print(score)
+
         return score
 
     @property
@@ -93,7 +90,7 @@ class Tournament(BaseModel):
         '''Fonction pour la création des match'''
         for p2 in players:
             m = Match(player_one_id=p1.id, player_two_id=p2.id)
-            if not m in self.turns[turn_nb].matchs:
+            if m not in self.turns[turn_nb].matchs:
                 players.pop(players.index(p2))
                 return m
         p2 = players.pop(0)

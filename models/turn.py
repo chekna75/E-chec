@@ -8,7 +8,7 @@ from typing import List
 class Turn(BaseModel):
     '''Class model d'un tours'''
     name: Name
-    start_date: datetime = datetime.today()
+    start_date: datetime = None
     end_date: datetime = None
     matchs: List[Match] = []
 

@@ -102,10 +102,7 @@ def main_controller():
         list_players_rank_controller()
 
     elif selection == 6:
-        list_player_alphabetique_controller()
-
-    elif selection == 7:
         update_player_rank_controller()
 
-    elif selection == 8:
+    elif selection == 7:
         reprendre_tournament_controller()

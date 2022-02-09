@@ -10,7 +10,7 @@ class View:
         self.blocking = blocking
 
     def display(self):
-        os.system("clear")
+       # os.system("clear")
         print(self.title)
         print("__________________")
         print(self.content)
