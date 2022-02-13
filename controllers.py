@@ -5,6 +5,7 @@ from views.choice_winner import ChoiceWinner
 from views.form_update_player_rank import FormUpdatePlayerRank
 from views.list_player_by_name import ListPlayerByName
 from views.list_player_by_rank import ListPlayerByRank
+from views.list_players_rank_controller_Tournament import List_players_rank_controller_Tournament
 from views.players_choice_listing import PlayersChoiceListing
 from views.main_menu import MainMenu
 from views.view_create_players import ViewCreatePlayers
@@ -75,6 +76,20 @@ def update_player_rank_controller():
     main_controller()
 
 
+def list_players_rank_controller_tournament():
+    '''La liste des joureur par rang dans le tournoi'''
+    form_data = List_players_rank_controller_Tournament().display()
+    tournament = tm.find_by_id(int(form_data["id"]))
+    tournament.list_players_rank(pm, tm)
+
+
+def list_players_name_controller_tournament():
+    '''La liste des joureur par rang dans le tournoi'''
+    form_data = List_players_rank_controller_Tournament().display()
+    tournament = tm.find_by_id(int(form_data["id"]))
+    tournament.list_players_rank(pm, tm)
+
+
 def main_controller():
     selection = MainMenu().display()
 
@@ -106,3 +121,9 @@ def main_controller():
 
     elif selection == 7:
         reprendre_tournament_controller()
+
+    elif selection == 8:
+        list_players_rank_controller_tournament()
+
+    elif selection == 9:
+        list_players_name_controller_tournament()

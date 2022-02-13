@@ -7,6 +7,7 @@ from .name import Name
 from .turn import Turn
 from .timecontrol import TimeControl
 from player_manager import player_manager
+from views.list_player_by_rank import ListPlayerByRank
 
 
 class Tournament(BaseModel):
@@ -67,6 +68,18 @@ class Tournament(BaseModel):
                         score += match.score_two.value
 
         return score
+
+    def list_players_rank(self, player_manager, tournament_manager):
+        tournament_manager.find_by_id(self.id)
+        players = [player_manager.find_by_id(id) for id in self.players]
+        players = sorted(players, key=lambda x: x.rank)
+        ListPlayerByRank(players)
+
+    def list_players_by_name(self, player_manager, tournament_manager):
+        tournament_manager.find_by_id(self.id)
+        players = [player_manager.find_by_id(id) for id in self.players]
+        players = sorted(players, key=lambda x: x.first_name)
+        ListPlayerByRank(players)
 
     @property
     def all_matchs(self):
