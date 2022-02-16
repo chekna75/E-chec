@@ -1,2 +1,4 @@
 pydantic
 tinydb
+flake8
+flake8-html
